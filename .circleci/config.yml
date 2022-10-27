@@ -1,5 +1,4 @@
 version: 2
-
 jobs:
   build:
     docker:
@@ -16,7 +15,7 @@ jobs:
       - run:
           name: install
           command: |
-          cd staticdata && git checkout `echo $CIRCLE_BRANCH | sed -e 's/ostap\|chagin/alpha/g'` && git pull && cd .. && ls -la 
+          npm install $$ cd staticdata && git checkout `echo $CIRCLE_BRANCH | sed -e 's/ostap\|chagin/alpha/g'` && git pull && cd .. && ls -la 
              
       - run:
           name: deploy
