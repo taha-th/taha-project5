@@ -21,6 +21,5 @@ jobs:
           name: deploy
           command: |
             NODE_ENV=production ./node_modules/webpack/bin/webpack.js -p --config ./webpack.config.js && sudo apt-get install awscli && ls -la dist && ./deploy.sh
-       
-        zeplin connect:
-          Zeplin CLI - v1.0.2
+       zeplin:
+    working_directory: ~/client
