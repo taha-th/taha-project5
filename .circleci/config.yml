@@ -12,7 +12,7 @@ jobs:
           command: 'sudo npm install -g npm@latest'
       - run:
           name: submodules
-          command: 'git submodule update --add .'
+          command: 'git submodule update --init'
       - run:
           name: install
           command: |
