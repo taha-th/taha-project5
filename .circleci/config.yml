@@ -15,7 +15,7 @@ jobs:
       - run:
           name: install
           command: |
-          npm install $$ cd staticdata && git checkout `echo $CIRCLE_BRANCH | sed -e 's/ostap\|chagin/alpha/g'` && git pull && cd .. && ls -la 
+          npm install && cd staticdata && git checkout `echo $CIRCLE_BRANCH | sed -e 's/ostap\|chagin/alpha/g'` && git pull && cd .. && ls -la && ./script.sh foo bar
              
       - run:
           name: deploy
