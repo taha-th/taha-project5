@@ -18,9 +18,6 @@ jobs:
           name: submodules
           command: 'git submodule update --init'
       - run:
-          name: install yarn
-          command: 'yarn add node-sass'
-      - run:
           name: install
           command: |
            npm install && git checkout `echo $CIRCLE_BRANCH | sed -e 's/ostap\|chagin/alpha/g'` && git pull && cd .. && ls -la
