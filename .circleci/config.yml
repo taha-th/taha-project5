@@ -24,11 +24,7 @@ jobs:
       - run:
           name: install
           command: |
-           npm install && git checkout `echo $CIRCLE_BRANCH | sed -e 's/ostap\|chagin/alpha/g'` && git pull && cd .. && ls -la
-       - run:
-           name: install sass
-           command: npm i -g sass
-             
+           npm install && git checkout `echo $CIRCLE_BRANCH | sed -e 's/ostap\|chagin/alpha/g'` && git pull && cd .. && ls -la     
       - run:
           name: deploy
           command: |
