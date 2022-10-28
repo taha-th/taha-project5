@@ -10,9 +10,6 @@ jobs:
           command: 'sudo npm install -g npm@latest'
       - run:
           name: | 
-          command: 'composer fund'
-      - run:
-          name: | 
           command: npm set audit false 
       - run:
           name: |
