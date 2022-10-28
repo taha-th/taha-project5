@@ -10,7 +10,7 @@ jobs:
           command: 'sudo npm install -g npm@latest'
       - run:
           name: | 
-          command: npm config set fund false --global
+          command: npm config set fund false
       - run:
           name: |
           command: npm config set legacy-peer-deps true
