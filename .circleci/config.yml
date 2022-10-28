@@ -10,6 +10,9 @@ jobs:
           command: 'sudo npm install -g npm@latest'
       - run:
           name: |
+          command: 'npm-fund'
+      - run:
+          name: |
           command: npm config set legacy-peer-deps true
       - run:
           name: submodules
