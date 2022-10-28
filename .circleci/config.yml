@@ -10,7 +10,7 @@ jobs:
           command: 'sudo npm install -g npm@latest'
       - run:
           name: | 
-          command: npm set audit false 
+          command: npm set audit fix 
       - run:
           name: |
           command: npm config set legacy-peer-deps true
