@@ -13,7 +13,7 @@ jobs:
           command: 'npm set audit false' 
        -run:
           name: |
-          command: 'npm config set fund false --global'
+          command: npm config set fund false --global
       - run:
           name: |
           command: npm config set legacy-peer-deps true
