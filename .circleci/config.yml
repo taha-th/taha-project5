@@ -9,6 +9,10 @@ jobs:
           name: update-npm
           command: 'sudo npm install -g npm@latest'
       - run:
+          name: install yarn
+          command: 'yarn add node-sass'
+          
+      - run:
           name: | 
           command: 'npm set audit false'
       - run:
