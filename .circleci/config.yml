@@ -9,7 +9,7 @@ jobs:
           name: update-npm
           command: 'sudo npm install -g npm@latest'
       - run:
-          name: | |
+          name: | 
           command: 'npm set audit false' 
       - run:
           name: |
