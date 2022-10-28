@@ -9,12 +9,11 @@ jobs:
           name: update-npm
           command: 'sudo npm install -g npm@latest'
       - run:
+          name: |
+          command: npm config set legacy-peer-deps true
+      - run:
           name: submodules
           command: 'git submodule update --init'
-      - run:
-          name: install yarn
-          command: 'yarn add node-sass'
-   
       - run:
           name: install
           command: |
