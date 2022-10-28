@@ -1,13 +1,16 @@
-version: 2
+version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/node:6.10.1
+      - image: circleci/node:16.4.1
     steps:
       - checkout
       - run:
           name: update-npm
           command: 'sudo npm install -g npm@latest'
+      - run:
+          name: |
+          command: 'npm install --no-fund node.js npm'
       - run:
           name: |
           command: npm config set legacy-peer-deps true
