@@ -14,9 +14,7 @@ jobs:
       - run:
           name: install yarn
           command: 'yarn add node-sass'
-       - run:
-          name: remove yarn
-          command: 'yarn remove node-sass && yarn add sass' 
+   
       - run:
           name: install
           command: |
