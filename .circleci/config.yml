@@ -34,6 +34,6 @@ jobs:
       - run:
           name: deploy
           command: |
-            NODE_ENV=production ./node_modules/webpack/bin/webpack.js --profile --config --env production ./webpack.config.js --mode production --env production && sudo apt-get install awscli && ls -la dist && ./deploy.sh
+            NODE_ENV=production ./node_modules/webpack/bin/webpack.js --profile --config ./webpack.config.js --mode production && sudo apt-get install awscli && ls -la dist && ./deploy.sh
      
 
