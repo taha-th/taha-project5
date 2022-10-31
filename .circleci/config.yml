@@ -1,5 +1,4 @@
 version: 2
-webpack: version:4.19.0
 jobs:
   build:
     docker:
@@ -9,6 +8,9 @@ jobs:
       - run:
           name: update-npm
           command: 'sudo npm install -g npm@latest'
+      - run:
+           name: |
+           command: update clean webpack plugin version
       - run:
           name: install yarn
           command: 'yarn add node-sass'
