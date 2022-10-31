@@ -26,7 +26,7 @@ jobs:
            npm install && git checkout `echo $CIRCLE_BRANCH | sed -e 's/ostap\|chagin/alpha/g'` && git pull && cd .. && ls -la
       - run:
           name: |
-          command: npm install webpack@5.71.0
+          command: yarn install webpack@5.71.0
       
       - run:
           name: deploy
