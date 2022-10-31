@@ -12,7 +12,7 @@ jobs:
           name: install yarn
           command: 'yarn add node-sass'
       - run:
-          name: | 
+          name: |  
           command: 'npm set audit false'
       - run:
           name: |
