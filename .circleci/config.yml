@@ -24,9 +24,7 @@ jobs:
           name: install
           command: |
            npm install && git checkout `echo $CIRCLE_BRANCH | sed -e 's/ostap\|chagin/alpha/g'` && git pull && cd .. && ls -la
-      - run:
-           name:
-           command: npm cache clear --force && npm install sass
+      
       - run:
           name: deploy
           command: |
