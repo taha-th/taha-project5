@@ -9,9 +9,6 @@ jobs:
           name: update-npm
           command: 'sudo npm install -g npm@latest'
       - run:
-           name: |
-           command: npm install webpack-clean@3.10.0 
-      - run:
           name: install yarn
           command: 'yarn add node-sass'
       - run:
