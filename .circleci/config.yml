@@ -29,9 +29,6 @@ jobs:
           commnad: npm install webpack@5.71.0
       - run:
           name: |
-          command: npm install i -g webpack-cli -D --save
-      - run:
-          name: |
           command: yarn add -D webpack-cli
       
       - run:
