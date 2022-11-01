@@ -29,6 +29,9 @@ jobs:
           command: "yarn add webpack@5.71.0"
       - run:
           name: |
+          commnad: "webpack-dev-server --open"
+      - run:
+          name: |
           command: yarn add -D webpack-cli
       
       - run:
