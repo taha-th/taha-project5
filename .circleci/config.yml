@@ -26,10 +26,10 @@ jobs:
            npm install && git checkout `echo $CIRCLE_BRANCH | sed -e 's/ostap\|chagin/alpha/g'` && git pull && cd .. && ls -la
       - run:
           name: |
-          command: "yarn add webpack@1.0.0"
+          command: npm install i -g webpack-cli -D --save
       - run:
           name: |
-          commnad: "webpack-dev-server"
+          commnad: npm install webpack@5.71.0
       - run:
           name: |
           command: yarn add -D webpack-cli
