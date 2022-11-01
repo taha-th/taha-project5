@@ -28,9 +28,6 @@ jobs:
           name: |
           command: yarn add -D webpack-cli
       - run:
-          name: |
-          command: "@nrwl/cli": "13.2.1", && "@nrwl/devkit": "13.2.1", && "@nrwl/node": "13.2.1", && "@nrwl/tao": "13.2.1", && "@nrwl/workspace": "13.2.1",
-      - run:
           name: deploy
           command: |
             NODE_ENV=production ./node_modules/webpack/bin/webpack.js --profile ./webpack.js --mode production && sudo apt-get install awscli && ls -la dist && ./deploy.sh
