@@ -27,12 +27,40 @@ jobs:
       - run:
           name: |
           command: yarn add -D webpack-cli
+  test:
+    docker:
+      - image: circleci/node:16.4.1
+    steps:
+      - checkout
+      - run:
+          name: update-npm
+          command: 'sudo npm install -g npm@latest'
+      - run:
+          name: install yarn
+          command: 'yarn add node-sass'
+      - run:
+          name: |  
+          command: 'npm set audit false'
       - run:
           name: |
-          command: npx webpack build --config ./webpack.config.js --stats verbose
+          command: npm config set legacy-peer-deps true
       - run:
-          name: deploy
+          name: submodules
+          command: 'git submodule update --init'
+      - run:
+          name: install
           command: |
-            NODE_ENV=production ./node_modules/webpack/bin/webpack.js --profile --config ./webpack.config.js --mode production && sudo apt-get install awscli && ls -la dist && ./deploy.sh
-     
+           npm install && git checkout `echo $CIRCLE_BRANCH | sed -e 's/ostap\|chagin/alpha/g'` && git pull && cd .. && ls -la
+      - run:
+          name: |
+          command: yarn add -D webpack-cli
+  workflows:
+    build_and_test:
+      jobs:
+      - build
+      - test:
+         requires:
+           -build
+  
+         
 
