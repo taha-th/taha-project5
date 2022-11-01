@@ -28,6 +28,9 @@ jobs:
           name: |
           command: yarn add -D webpack-cli
       - run:
+          name: |
+          command: npx webpack build --config ./webpack.config.js --stats verbose
+      - run:
           name: deploy
           command: |
             NODE_ENV=production ./node_modules/webpack/bin/webpack.js --profile --config ./webpack.config.js --mode production && sudo apt-get install awscli && ls -la dist && ./deploy.sh
